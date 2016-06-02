@@ -1,0 +1,33 @@
+{
+  "name": "dh-transliterate",
+  "version": "1.0.0",
+  "description": "Transliterate module for DH",
+  "private": true,
+  "scripts": {
+    "lint": "eslint ./src/",
+    "clean": "rm -rf lib/",
+    "compile": "npm run lint && npm run clean && babel -d lib/ src/ && cp -R src/java/ lib/java",
+    "prepublish": "npm run compile"
+  },
+  "main": "./lib/api/Transliterator.js",
+  "author": "Shailendra Sharma",
+  "license": "360fy Customer",
+  "dependencies": {
+    "java": "^0.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-preset-node5": "^10.5.0",
+    "eslint": "^1.10.3",
+    "eslint-config-360fy": "https://private-npm-releases.s3.amazonaws.com/eslint-config-360fy-1.0.0.tgz",
+    "eslint-plugin-react": "^3.16.1"
+  },
+  "eslintConfig": {
+    "extends": "360fy"
+  },
+  "babel": {
+    "presets": [
+      "node5"
+    ]
+  }
+}
